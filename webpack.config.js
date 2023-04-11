@@ -1,11 +1,13 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [{ from: "./package.json", to: "./" }],
     }),
+    new MiniCssExtractPlugin(),
   ],
   entry: "/src/index.ts",
   output: {
@@ -22,6 +24,17 @@ module.exports = {
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
       },
     ],
   },
