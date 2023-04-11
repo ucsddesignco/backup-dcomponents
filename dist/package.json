@@ -1,9 +1,9 @@
 {
-  "name": "dcomponents",
+  "name": "@gambowoa/dcomponents",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "index.ts",
+  "types": "index.d.ts",
   "scripts": {
     "build": "webpack",
     "storybook": "storybook dev -p 6006",
