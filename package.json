@@ -2,8 +2,8 @@
   "name": "component-lib-example",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "webpack"
   },
